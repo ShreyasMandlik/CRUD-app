@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+{% if success %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Task {{msg}} </strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+{% endif %}
+
+<div class="container my-3" style="border: black solid 1px; border-radius: 2px;">
+    <h2 class="my-3" style="text-align:center"><u>Add task</u></h2>
+    <form action="/" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="Name_title">Task Name</label>
+          <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp" placeholder="Enter Task to do">
+        </div>
+
+        <div class="form-group my-3">
+            <label for="time">Deadline</label>
+            <input type="date" class="form-control" id="Deadline_time" name="Deadline_time" aria-describedby="emailHelp"/>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+        <br>
+        <br>
+      </form>
+</div>
+
+
+{% endblock body %}
+
+
+

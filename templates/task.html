@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+
+{% block body %}
+
+    <div class="container my-3" style="border: black solid 2px;">
+        <div class="container">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">SrNo.</th>
+                    <th scope="col">Task Name</th>
+                    <th scope="col">End date</th>
+                    <th scope="col">Operations</th>
+                  </tr>
+                </thead>
+                
+    
+                {% for task in task %}
+                    <tbody>
+                        <tr>
+                        <th scope="row">{{forloop.counter}}</th>
+                        <td >{{task.Task_Name}}</td>
+                        <td>{{task.deadline}}</td>
+                        <td><a href="{% url 'taskdelete' task.id %}"><button type="button" class="btn btn-danger">Delete</button></a> 
+                        </tr>
+                    </tbody>
+                {% endfor %}
+              </table>
+        </div>
+        
+    </div>
+
+
+{% endblock body %}
