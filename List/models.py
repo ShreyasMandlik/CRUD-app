@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 from django.db import models
 
 # Create your models here.
@@ -5,6 +6,7 @@ from django.db import models
 
 class ToDoList(models.Model):
     Task_Name=models.CharField(max_length=50)
+    start_date=models.DateField(null=True)
     deadline=models.DateField()
 
 

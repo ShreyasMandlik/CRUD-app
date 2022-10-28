@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% block body %}
+
+    
+        <div class="container my-3"  style="border: black solid 2px; border-radius: 2px;">
+            <form action="/edit/{{task.id}}" method="post">
+                {% csrf_token %}
+            <div class="form-group">
+                <label for="Name_title">Change Task Name-{{task.Task_Name}} to : </label>
+                <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp">
+            </div>
+    
+                <div class="form-group my-3">
+                    <label for="Name_title">Change Task Name-{{task.deadline}} to : </label>
+                    <input type="date" class="form-control" id="Deadline_time" name="Deadline_time" aria-describedby="emailHelp"/>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Submit</button>
+    
+                <br>
+                <br>
+            </form>
+     
+        </div>
+           
+
+{% endblock body %}
