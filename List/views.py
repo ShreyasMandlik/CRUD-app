@@ -6,8 +6,10 @@ def home(request):
     if request.method=='POST':
         title=request.POST['title']
         start_date=request.POST['start_date']
+        status=request.POST['status']
         deadline=request.POST['Deadline_time']
-        ins=ToDoList(Task_Name=title,deadline=deadline)
+
+        ins=ToDoList(Task_Name=title,start_date=start_date,status=status,deadline=deadline)
         ins.save()
         context={'success':True,
                  'msg':'Added'   
@@ -44,9 +46,11 @@ def edit(request,id):
     if request.method=='POST':
         title=request.POST['title']
         start_date=request.POST['start_date']
+        status=request.POST['status']
         deadline=request.POST['Deadline_time']
         task.Task_Name=title
         task.start_date=start_date
+        task.status=status
         task.deadline=deadline
         task.save()
         context={'success':True,

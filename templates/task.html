@@ -11,6 +11,7 @@
                     <th scope="col">SrNo.</th>
                     <th scope="col">Task Name</th>
                     <th scope="col">Start date</th>
+                    <th scope="col">Status</th>
                     <th scope="col">End date</th>
                     <th scope="col">Operations</th>
                   </tr>
@@ -23,6 +24,7 @@
                         <th scope="row">{{forloop.counter}}</th>
                         <td >{{task.Task_Name}}</td>
                         <td>{{task.start_date}}</td>
+                        <td>{{task.status}}</td>
                         <td>{{task.deadline}}</td>
                         <td><a href="{% url 'taskdelete' task.id %}"><button type="button" class="btn btn-danger">Delete</button></a> 
                             <a href="{% url 'taskupdate' task.id %}"><button type="button" class="btn btn-warning">Update</button></a> </td>
